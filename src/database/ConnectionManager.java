@@ -10,7 +10,7 @@ import util.Constantes;
 
 public class ConnectionManager {
 
-    private String myUrl = "jdbc:mysql://localhost/prod_linde?useUnicode=true&characterEncoding=utf8";
+    private String myUrl = "jdbc:mysql://10.141.0.43/prod_linde?useUnicode=true&characterEncoding=utf8";
     private String user = "root";
     private String pass = "Munich2015";
 
@@ -19,10 +19,10 @@ public class ConnectionManager {
     public Connection getConnection() {
         try {
             
-            if (!Constantes.LINDE_ENVIRONMENT) {
-                myUrl = "jdbc:mysql://10.58.87.19/testes";
-                pass = "Munique";
-            }
+//            if (!Constantes.LINDE_ENVIRONMENT) {
+//                myUrl = "jdbc:mysql://sts06wk12/testes";
+//                pass = "Munique";
+//            }
             
             if (conn == null) {
                 return DriverManager.getConnection(myUrl, user, pass);

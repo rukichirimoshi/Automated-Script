@@ -78,8 +78,7 @@ public class DBUtil {
         return null;
     }
 
-    public String getAgeCheckLastExec(String code)
-    {
+    public String getAgeCheckLastExec(String code) {
         String fields = "(TIME_TO_SEC(TIMEDIFF(NOW(), lastexec)) / 60)";
         String table = Constantes.DB_ChecksCmds_Table;
         String condition = "code = '" + code + "'";

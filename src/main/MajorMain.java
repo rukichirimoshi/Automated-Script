@@ -3,8 +3,9 @@ package main;
 import java.util.Date;
 
 import OTASS013.LogicOTASS13;
-import util.Constantes;
 import change.ChangeCheck;
+import reference_files.RefFilesComparator;
+import util.Constantes;
 
 public class MajorMain {
 
@@ -19,6 +20,13 @@ public class MajorMain {
 
         ChangeCheck change = new ChangeCheck(executionTime);
         change.checkChanges();
+        
+        //System.out.println("==================================================================================================================================");
+        System.out.println("Executing the Reference Files Update Check Verification...");
+        //System.out.println("==================================================================================================================================");
+        
+        RefFilesComparator refFilesComparator = new RefFilesComparator(executionTime);
+        refFilesComparator.checkRefFilesUpdates();
 
         //System.out.println("==================================================================================================================================");
         System.out.println("Executing The checks...");

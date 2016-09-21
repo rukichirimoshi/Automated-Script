@@ -21,7 +21,6 @@ public class FileReaderUtil {
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-
         }
     }
 
@@ -58,13 +57,28 @@ public class FileReaderUtil {
         String fileRows = "";
         String line = "";
         if (this.getFile().exists()) {
-        	try {
-        		while ((line = this.getBufferedReader().readLine()) != null) {
-        			fileRows += line + "\n";
-        		}
-        	} catch (IOException e) {
-        		e.printStackTrace();
-        	}
+            try {
+                while ((line = this.getBufferedReader().readLine()) != null) {
+                    fileRows += line + "\n";
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return fileRows;
+    }
+    
+    public String readFileCRLF() {
+        String fileRows = "";
+        String line = "";
+        if (this.getFile().exists()) {
+            try {
+                while ((line = this.getBufferedReader().readLine()) != null) {
+                    fileRows += line + "\r\n";
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return fileRows;
     }

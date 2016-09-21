@@ -54,7 +54,7 @@ public class Constantes {
     public static final boolean LINDE_CMDS_INTERVAL = false;
     
     public static final boolean LINDE_ENVIRONMENT = true;
-    public static final boolean USE_MAIL_SEND = false;//true;
+    public static final boolean USE_MAIL_SEND = false;
     public static final boolean SHOW_DB_MESSAGES = false;
     public static final boolean SHOW_OTHER_MESSAGES = false;
     public static final int SEC_TIME_WAIT = 3;
