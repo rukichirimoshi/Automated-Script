@@ -24,7 +24,7 @@ public class RefFilesComparator {
     }
 
     public void checkRefFilesUpdates() {
-        this.getReferencesFromDB();
+    	this.getReferencesFromDB();
 
         for (ReferenceFile f : this.getFileWithUpdate()) {
             //Write new content in the reference file

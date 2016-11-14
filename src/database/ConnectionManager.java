@@ -10,7 +10,7 @@ import util.Constantes;
 
 public class ConnectionManager {
 
-    private String myUrl = "jdbc:mysql://10.141.0.43/prod_linde?useUnicode=true&characterEncoding=utf8";
+    private String myUrl = "jdbc:mysql://localhost/prod_linde?useUnicode=true&characterEncoding=utf8";
     private String user = "root";
     private String pass = "Munich2015";
 

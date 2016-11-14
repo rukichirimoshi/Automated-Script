@@ -27,7 +27,7 @@ public class MajorMain {
         
         RefFilesComparator refFilesComparator = new RefFilesComparator(executionTime);
         refFilesComparator.checkRefFilesUpdates();
-
+        
         //System.out.println("==================================================================================================================================");
         System.out.println("Executing The checks...");
         //System.out.println("==================================================================================================================================");
@@ -38,7 +38,7 @@ public class MajorMain {
             infra.execCheck();
             infra.storeINDB();
         }
-
+        
         ChecksExec otass = new ChecksExec(Constantes.DB_OTASS_ID, executionTime);
         if (otass.getObjCheck().getItens().size() > 0) {
             otass.execCheck();
@@ -69,18 +69,20 @@ public class MajorMain {
             pixcore.storeINDB();
         }
         
-        ChecksExec icc = new ChecksExec(Constantes.DB_ICC_ID, executionTime);
-        if (icc.getObjCheck().getItens().size() > 0) {
-        	icc.execCheck();
-        	icc.storeINDB();
-        }
-
+		//ChecksExec icc = new ChecksExec(Constantes.DB_ICC_ID, executionTime);
+		//if (icc.getObjCheck().getItens().size() > 0) {
+		//	icc.execCheck();
+		//	icc.storeINDB();
+		//}
+        
+       
         //System.out.println("==================================================================================================================================");
         System.out.println("Executing the OTASS013 Verification...");
         //System.out.println("==================================================================================================================================");
 
         LogicOTASS13 otass013 = new LogicOTASS13();
         otass013.MainMethod();
+        
         if (Constantes.USE_MAIL_SEND) {
             //System.out.println("==================================================================================================================================");
             System.out.println("Executing the Send Mail...");
@@ -89,7 +91,7 @@ public class MajorMain {
             SendMails sendMails = new SendMails();
             sendMails.startSend();
         }
-
+        
         //System.out.println("==================================================================================================================================");
         executionTime = new Date();
         System.out.println("Finished the execution of the SCHEDULED Scripts at:\n" + executionTime);

@@ -129,7 +129,7 @@ public class DBUtil {
         String table = Constantes.DB_ChecksOutput_Table;
         String dbExecTime = dtUtil.getDBFormat(execTime);
 
-        String condition = "check_id=" + checkID + " AND exec_time <> '" + dbExecTime + "'";
+        String condition = "status<>'CHANGE' AND check_id=" + checkID + " AND exec_time <> '" + dbExecTime + "'";
         ResultSet rs = this.doSelect(fields, table, condition);
 
         String strExec = "";

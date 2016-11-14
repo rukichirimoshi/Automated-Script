@@ -72,8 +72,7 @@ public class ChecksExec {
 				ECMchecksCmds ecmCmds = new ECMchecksCmds(String.valueOf(objCheck.getId()), dbCheckConfig.getPath_output());
 				try { ecmCmds.callCmdsInterval(); }
 				catch (IOException e) { e.printStackTrace(); }
-        	}
-        	else {
+        	} else {
 	            if (objCheck.getId() == 2) {
 	                //If OTASS, call special implementation
 	                this.callCMD(new DecryptOTASS().getUserandPass());
